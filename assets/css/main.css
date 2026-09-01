@@ -2975,3 +2975,48 @@ section,
     transition: none;
   }
 }
+
+
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .mobile-quick-nav {
+    right: 5px;
+
+    width: 40px;
+
+    padding: 5px 3px;
+  }
+
+
+  .quick-nav-item {
+    width: 33px;
+    height: 33px;
+
+    margin: 1px 0;
+  }
+
+
+  .quick-nav-item i {
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 1199px) {
+
+  .quick-nav-item[data-section="portfolio"] {
+    color: #fff;
+    background: rgba(13, 110, 253, 0.12);
+  }
+
+  .quick-nav-item[data-section="portfolio"] i {
+    font-size: 18px;
+  }
+
+}
