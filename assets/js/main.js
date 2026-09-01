@@ -534,3 +534,76 @@
   initializeInteractionPolish();
 
 })();
+
+
+
+  /* ---------------------------------------------------------
+     UPDATE ACTIVE ICON WHILE SCROLLING
+     --------------------------------------------------------- */
+
+  const sections = [
+    "hero",
+    "about",
+    "skills",
+    "resume",
+    "portfolio",
+    "services",
+    "testimonials",
+    "contact"
+  ];
+
+
+  function updateActiveQuickNav() {
+
+    const scrollPosition =
+      window.scrollY + (window.innerHeight * 0.35);
+
+
+    let currentSection = "hero";
+
+
+    sections.forEach(function (sectionId) {
+
+      const section =
+        document.getElementById(sectionId);
+
+      if (!section) {
+        return;
+      }
+
+
+      const sectionTop =
+        section.offsetTop;
+
+      if (scrollPosition >= sectionTop) {
+        currentSection = sectionId;
+      }
+
+    });
+
+
+    quickNavItems.forEach(function (item) {
+
+      const sectionId =
+        item.getAttribute("data-section");
+
+      item.classList.toggle(
+        "active",
+        sectionId === currentSection
+      );
+
+    });
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    updateActiveQuickNav,
+    { passive: true }
+  );
+
+
+  updateActiveQuickNav();
+
+});
