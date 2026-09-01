@@ -535,6 +535,78 @@
 
 })();
 
+/* =========================================================
+   MOBILE QUICK ACCESS NAVIGATION
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const quickNav = document.querySelector(".mobile-quick-nav");
+  const quickNavItems = document.querySelectorAll(".quick-nav-item");
+
+  if (!quickNav || !quickNavItems.length) {
+    return;
+  }
+
+
+  /* ---------------------------------------------------------
+     SHOW QUICK NAV AFTER USER STARTS SCROLLING
+     --------------------------------------------------------- */
+
+  function updateQuickNavVisibility() {
+
+    if (window.scrollY > 180) {
+      quickNav.classList.add("visible");
+    } else {
+      quickNav.classList.remove("visible");
+    }
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    updateQuickNavVisibility,
+    { passive: true }
+  );
+
+
+  updateQuickNavVisibility();
+
+
+  /* ---------------------------------------------------------
+     SMOOTH SECTION NAVIGATION
+     --------------------------------------------------------- */
+
+  quickNavItems.forEach(function (item) {
+
+    item.addEventListener("click", function (event) {
+
+      event.preventDefault();
+
+      const targetId = this.getAttribute("href");
+
+      const target = document.querySelector(targetId);
+
+      if (!target) {
+        return;
+      }
+
+      const headerOffset = 20;
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerOffset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+
+    });
+
+  });
 
 
   /* ---------------------------------------------------------
