@@ -3193,6 +3193,198 @@ section,
 
 }
 
+/* =========================================================
+   MOBILE QUICK ACCESS — FINAL
+   ========================================================= */
+
+@media (max-width: 1199px) {
+
+  /* Keep the original desktop sidebar completely hidden */
+  body.index-page #header {
+    left: -110% !important;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* Hide the original navigation on mobile */
+  body.index-page #header #navmenu {
+    display: none !important;
+  }
+
+  /* Hide the old mobile hamburger */
+  body.index-page #header .header-toggle {
+    display: none !important;
+  }
+
+  /* -------------------------------------------------------
+     QUICK ACCESS RAIL
+     ------------------------------------------------------- */
+
+  body.index-page .mobile-quick-nav {
+    position: fixed !important;
+
+    top: 50% !important;
+    right: 9px !important;
+
+    transform: translateY(-50%) !important;
+
+    width: 46px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    padding: 6px 4px !important;
+
+    background: rgba(8, 15, 29, 0.90) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+
+    border-radius: 17px !important;
+
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+
+    box-shadow:
+      0 12px 35px rgba(0, 0, 0, 0.35),
+      0 0 25px rgba(14, 165, 233, 0.10) !important;
+
+    z-index: 2147483647 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+  }
+
+
+  body.index-page .quick-nav-item {
+    width: 36px !important;
+    height: 36px !important;
+
+    margin: 2px 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #94a3b8 !important;
+
+    text-decoration: none !important;
+
+    border-radius: 10px !important;
+
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease !important;
+  }
+
+
+  body.index-page .quick-nav-item i {
+    font-size: 15px !important;
+    line-height: 1 !important;
+  }
+
+
+  body.index-page .quick-nav-item.active {
+    color: #ffffff !important;
+
+    background: rgba(14, 165, 233, 0.20) !important;
+
+    box-shadow:
+      inset 0 0 0 1px rgba(14, 165, 233, 0.22),
+      0 0 12px rgba(14, 165, 233, 0.10) !important;
+  }
+
+
+  body.index-page .quick-nav-item:hover,
+  body.index-page .quick-nav-item:focus-visible {
+    color: #ffffff !important;
+
+    background: rgba(255, 255, 255, 0.09) !important;
+
+    transform: scale(1.08) !important;
+  }
+
+
+  body.index-page .quick-nav-item span {
+    position: absolute !important;
+
+    right: 53px !important;
+
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+
+    white-space: nowrap !important;
+
+    padding: 7px 10px !important;
+
+    color: #ffffff !important;
+
+    background: rgba(8, 15, 29, 0.97) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+
+    border-radius: 7px !important;
+
+    font-size: 11px !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+
+    pointer-events: none !important;
+
+    transition: 0.2s ease !important;
+  }
+
+
+  body.index-page .quick-nav-item:hover span,
+  body.index-page .quick-nav-item:focus-visible span {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  body.index-page .mobile-quick-nav {
+    right: 7px !important;
+
+    width: 43px !important;
+
+    padding: 5px 3px !important;
+
+    border-radius: 15px !important;
+  }
+
+
+  body.index-page .quick-nav-item {
+    width: 35px !important;
+    height: 35px !important;
+
+    margin: 2px 0 !important;
+  }
+
+
+  body.index-page .quick-nav-item i {
+    font-size: 14px !important;
+  }
+
+
+  body.index-page .quick-nav-item span {
+    display: none !important;
+  }
+
+}
+
 
 /* =========================================================
    VERY SMALL PHONES
@@ -3200,38 +3392,16 @@ section,
 
 @media (max-width: 380px) {
 
-  .mobile-quick-nav {
-    right: 5px;
+  body.index-page .mobile-quick-nav {
+    right: 5px !important;
 
-    width: 40px;
-
-    padding: 5px 3px;
+    width: 40px !important;
   }
 
 
-  .quick-nav-item {
-    width: 33px;
-    height: 33px;
-
-    margin: 1px 0;
-  }
-
-
-  .quick-nav-item i {
-    font-size: 13px;
-  }
-
-}
-
-@media (max-width: 1199px) {
-
-  .quick-nav-item[data-section="portfolio"] {
-    color: #fff;
-    background: rgba(13, 110, 253, 0.12);
-  }
-
-  .quick-nav-item[data-section="portfolio"] i {
-    font-size: 18px;
+  body.index-page .quick-nav-item {
+    width: 33px !important;
+    height: 33px !important;
   }
 
 }
